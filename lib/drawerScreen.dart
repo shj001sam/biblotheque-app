@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_application_1/configuration.dart';
 
 class DrawerScreen extends StatefulWidget {
   @override
@@ -39,50 +39,17 @@ class _DrawerScreenState extends State<DrawerScreen> {
             ],
           ),
           Column(
-            
-            children: [
-              Row(
+            children: drawerItems.map((element)=> Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Row(
                 children: [
-                  IconButton(onPressed: (){}, icon: Icon(Icons.home, color: Colors.white,size: 30,)),
+                  Icon(element['icon'], color: Colors.white,size: 30,),
                   SizedBox(width: 10,),
-                  Text('Page acceuil', style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),)
+                  Text(element['title'], style:TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),)
                 ],
               ),
-              Row(
-                children: [
-                  IconButton(onPressed: (){}, icon: Icon(Icons.home, color: Colors.white,size: 30,)),
-                  SizedBox(width: 10,),
-                  Text('Page acceuil', style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),)
-                ],
-              ),
-              Row(
-                children: [
-                  IconButton(onPressed: (){}, icon: Icon(Icons.home, color: Colors.white,size: 30,)),
-                  SizedBox(width: 10,),
-                  Text('Page acceuil', style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),)
-                ],
-              ),
-              Row(
-                children: [
-                  IconButton(onPressed: (){}, icon: Icon(Icons.home, color: Colors.white,size: 30,)),
-                  SizedBox(width: 10,),
-                  Text('Page acceuil', style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),)
-                ],
-              ),
-              Row(
-                children: [
-                  IconButton(onPressed: (){}, icon: Icon(Icons.home, color: Colors.white,size: 30,)),
-                  SizedBox(width: 10,),
-                  Text('Page acceuil', style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),)
-                ],
-              ),
-            ],
-          ),
+            )).toList(),
+          ), 
           Row(
             children: [
               IconButton(
