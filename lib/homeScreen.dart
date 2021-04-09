@@ -20,7 +20,11 @@ class _HomeScreenState extends State<HomeScreen> {
       transform: Matrix4.translationValues(xOffset, yOffset, 0)
         ..scale(scaleFactor),
       duration: Duration(milliseconds: 250),
-      color: Colors.grey[300],
+      
+      decoration: BoxDecoration(
+        color: Colors.grey[300],
+        borderRadius: BorderRadius.circular(isDrawerOpen?20:0.0),
+      ),
       child: SingleChildScrollView(
         child: Column(
           children: [
@@ -65,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-              margin: EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+              margin: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
               decoration: BoxDecoration(
                   color: Colors.white, borderRadius: BorderRadius.circular(20)),
               child: Row(
@@ -79,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 20),
-              margin: EdgeInsets.symmetric(vertical: 30),
+              margin: EdgeInsets.symmetric(vertical: 20),
               decoration:
                   BoxDecoration(borderRadius: BorderRadius.circular(20)),
               height: 200,
@@ -98,7 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
               },
               child: Container(
                 height: 240,
-                margin: EdgeInsets.symmetric(horizontal: 10, vertical: 25),
+                margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 child: Row(
                   children: [
                     Expanded(
@@ -141,7 +145,7 @@ class _HomeScreenState extends State<HomeScreen> {
               },
               child: Container(
                 height: 240,
-                margin: EdgeInsets.symmetric(horizontal: 10, vertical: 25),
+                margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 child: Row(
                   children: [
                     Expanded(
